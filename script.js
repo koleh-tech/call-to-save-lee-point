@@ -18,11 +18,14 @@ function generatePhoneList() {
             var character = getRandomCharacter();
             var li = document.createElement("li");
             var a = document.createElement("a");
-            var p = document.createElement("p");
-            a.href = "tel:+123456789".concat(i); // Replace with actual phone numbers
-            a.textContent = "tel:+123456789".concat(i); // Replace with actual phone numbers
-            p.textContent = "".concat(character.name, " - ").concat(character.occupation);
-            li.appendChild(a);
+            var span = document.createElement("span");
+            var div = document.createElement("div");
+            a.href = "tel:+61421137167".concat(i); // Replace with actual phone numbers
+            a.textContent = "tel:+61421137167".concat(i); // Replace with actual phone numbers
+            span.textContent = ", ".concat(character.name, " - ").concat(character.occupation);
+            div.appendChild(a);
+            div.appendChild(span);
+            li.appendChild(div);
             phoneList.appendChild(li);
         }
     }
