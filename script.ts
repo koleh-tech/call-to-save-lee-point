@@ -1,4 +1,24 @@
-import { Character, characters } from "./names"
+// Define types for character and occupation
+type Character = {
+    name: string
+    occupation: string
+}
+
+// Array of characters and occupations
+const characters: Character[] = [
+    { name: 'John Doe', occupation: 'Plumber' },
+    { name: 'Jane Smith', occupation: 'Software Developer' },
+    { name: 'xohn Doe', occupation: 'Plumber' },
+    { name: 'xane Smith', occupation: 'Software Developer' },
+    { name: 'Zane Smith', occupation: 'Software Developer' },
+    // Add more characters as needed
+]
+
+// Function to randomly pick a character and occupation
+function getRandomCharacter(): Character {
+    const randomIndex = Math.floor(Math.random() * characters.length)
+    return characters[randomIndex]
+}
 
 function getRandomCharacters(numChars: number): Character[] {
     const shuffledCharacters = shuffleArray([...characters]) // Assuming characters is your array of available characters
