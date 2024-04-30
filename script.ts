@@ -27,8 +27,10 @@ function generatePhoneList(): void {
             const character = getRandomCharacter();
             const li = document.createElement("li");
             const a = document.createElement("a");
-            a.href = `tel:+123456789${i}`; // Replace with actual phone numbers
-            a.textContent = `${character.name} - ${character.occupation}`;
+            const p = document.createElement("p");
+            a.href = `tel:+61421137167${i}`; // Replace with actual phone numbers
+            a.textContent = `tel:+61421137167${i}`; // Replace with actual phone numbers
+            p.textContent = `${character.name} - ${character.occupation}`;
             li.appendChild(a);
             phoneList.appendChild(li);
         }
