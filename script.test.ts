@@ -1,39 +1,18 @@
+import { getRandomCharacter } from './script';
 
-// Define types for character and occupation
-type Character = {
-    name: string;
-    occupation: string;
-};
+describe('getRandomCharacter', () => {
+    it('should return a random character', () => {
+        // Define a mock list of characters for testing
+        const mockCharacters = [
+            { name: 'Mock Character 1', occupation: 'Mock Occupation 1' },
+            { name: 'Mock Character 2', occupation: 'Mock Occupation 2' },
+            { name: 'Mock Character 3', occupation: 'Mock Occupation 3' },
+        ];
 
-// Array of characters and occupations
-const characters: Character[] = [
-    { name: "John Doe", occupation: "Plumber" },
-    { name: "Jane Smith", occupation: "Software Developer" },
-    // Add more characters as needed
-];
+        // Call the getRandomCharacter function
+        const result = getRandomCharacter(mockCharacters);
 
-// Function to randomly pick a character and occupation
-function getRandomCharacter(): Character {
-    const randomIndex = Math.floor(Math.random() * characters.length);
-    return characters[randomIndex];
-}
-
-// Function to generate HTML for phone list
-function generatePhoneList(): void {
-    const phoneList = document.getElementById("phoneList");
-    if (phoneList) {
-        phoneList.innerHTML = "";
-        for (let i = 0; i < 5; i++) { // You can adjust the number of phone numbers displayed
-            const character = getRandomCharacter();
-            const li = document.createElement("li");
-            const a = document.createElement("a");
-            a.href = `tel:+123456789${i}`; // Replace with actual phone numbers
-            a.textContent = `${character.name} - ${character.occupation}`;
-            li.appendChild(a);
-            phoneList.appendChild(li);
-        }
-    }
-}
-
-// Generate initial phone list when the page loads
-window.onload = generatePhoneList;
+        // Assert that the result is one of the mock characters
+        expect(mockCharacters).toContain(result);
+    });
+});
