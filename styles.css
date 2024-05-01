@@ -23,8 +23,9 @@ ul {
 }
 
 li {
+    margin-top: 10px;
     margin-bottom: 10px;
-    list-style: circle;
+    list-style: none;
 }
 
 a {

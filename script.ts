@@ -139,7 +139,7 @@ function generatePhoneList(): void {
         {phoneNo: `(08) 8947 1661`, description: "WRSC Earthworks & Transport Darwin"},
     ]
     const characters = getRandomCharacters(phoneNumbers.length).map(
-        (c) => `${c.name} - ${c.occupation}`,
+        (c) => `Who's calling? ${c.name} - ${c.occupation}`,
     )
 
     function formatPhoneNumber(contact: ContactAndBackground, index: number) {

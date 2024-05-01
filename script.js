@@ -132,7 +132,7 @@ function generatePhoneList() {
         { phoneNo: "(02) 9349 6007", description: "Matt Thistlethwaite - the MP directly responsible for DHA" },
         { phoneNo: "(08) 8947 1661", description: "WRSC Earthworks & Transport Darwin" },
     ];
-    var characters = getRandomCharacters(phoneNumbers.length).map(function (c) { return "".concat(c.name, " - ").concat(c.occupation); });
+    var characters = getRandomCharacters(phoneNumbers.length).map(function (c) { return "Who's calling? ".concat(c.name, " - ").concat(c.occupation); });
     function formatPhoneNumber(contact, index) {
         var phoneNumberElem = document.createElement('div');
         var a = document.createElement('a');
