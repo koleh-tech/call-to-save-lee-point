@@ -132,19 +132,19 @@ function generatePhoneList() {
         "+61421137170",
         "+61421137171",
     ];
-    var characters = getRandomCharacters(phoneNumbers.length).map(function (c) { return ", ".concat(c.name, " - ").concat(c.occupation); });
+    var characters = getRandomCharacters(phoneNumbers.length).map(function (c) { return "".concat(c.name, " - ").concat(c.occupation); });
     function formatPhoneNumber(phoneNumber, index) {
-        var li = document.createElement('li');
+        var phoneNumberElem = document.createElement('div');
         var a = document.createElement('a');
-        var span = document.createElement('span');
-        var div = document.createElement('div');
         a.href = "tel:+".concat(phoneNumber); // Replace with actual phone numbers
         a.textContent = "".concat(phoneNumber); // Replace with actual phone numbers
-        span.textContent = characters[index];
-        div.appendChild(a);
-        div.appendChild(span);
-        li.appendChild(div);
-        phoneList.appendChild(li);
+        var infoAndContact = document.createElement('ul');
+        var characterElem = document.createElement('li');
+        characterElem.textContent = characters[index];
+        infoAndContact.append(characterElem);
+        phoneNumberElem.appendChild(a);
+        phoneNumberElem.appendChild(infoAndContact);
+        phoneList.appendChild(phoneNumberElem);
     }
     phoneNumbers.forEach(formatPhoneNumber);
 }

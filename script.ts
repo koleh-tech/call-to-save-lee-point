@@ -134,23 +134,25 @@ function generatePhoneList(): void {
         `+61421137171`,
     ]
     const characters = getRandomCharacters(phoneNumbers.length).map(
-        (c) => `, ${c.name} - ${c.occupation}`,
+        (c) => `${c.name} - ${c.occupation}`,
     )
 
     function formatPhoneNumber(phoneNumber: string, index: number) {
-        const li = document.createElement('li')
+        const phoneNumberElem = document.createElement('div')
         const a = document.createElement('a')
-        const span = document.createElement('span')
-        const div = document.createElement('div')
-
         a.href = `tel:+${phoneNumber}` // Replace with actual phone numbers
         a.textContent = `${phoneNumber}` // Replace with actual phone numbers
-        span.textContent = characters[index]
 
-        div.appendChild(a)
-        div.appendChild(span)
-        li.appendChild(div)
-        phoneList.appendChild(li)
+
+        const infoAndContact = document.createElement('ul')
+        const characterElem = document.createElement('li')
+        characterElem.textContent = characters[index]
+
+        infoAndContact.append(characterElem)
+
+        phoneNumberElem.appendChild(a)
+        phoneNumberElem.appendChild(infoAndContact)
+        phoneList.appendChild(phoneNumberElem)
     }
 
     phoneNumbers.forEach(formatPhoneNumber)
