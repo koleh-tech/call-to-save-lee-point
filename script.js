@@ -128,8 +128,8 @@ function generatePhoneList() {
     var phoneNumbers = [
         { phoneNo: "139 342", description: "Main DHA contact" },
         { phoneNo: "133 342", description: "Leasing experts" },
-        { phoneNo: "02 6277 7920", description: "Tanya Plibersek - Environment minister" },
-        { phoneNo: "02 9349 6007", description: "Matt Thistlethwaite - the MP directly responsible for DHA" },
+        { phoneNo: "(02) 6277 7920", description: "Tanya Plibersek - Environment minister" },
+        { phoneNo: "(02) 9349 6007", description: "Matt Thistlethwaite - the MP directly responsible for DHA" },
         { phoneNo: "(08) 8947 1661", description: "WRSC Earthworks & Transport Darwin" },
     ];
     var characters = getRandomCharacters(phoneNumbers.length).map(function (c) { return "".concat(c.name, " - ").concat(c.occupation); });
