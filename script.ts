@@ -144,7 +144,7 @@ function generatePhoneList(): void {
     function formatPhoneNumber(contact: ContactAndBackground, index: number) {
         const phoneNumberElem = document.createElement('div')
         const a = document.createElement('a')
-        a.href = `tel:+${contact.phoneNo}` // Replace with actual phone numbers
+        a.href = `tel:${contact.phoneNo}` // Replace with actual phone numbers
         a.textContent = `${contact.phoneNo} - ${contact.description}` // Replace with actual phone numbers
 
 
