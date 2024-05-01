@@ -136,10 +136,6 @@ function generatePhoneList(): void {
         {phoneNo: `+133 342`, description: "Leasing experts"},
         {phoneNo: `+02 6277 7920`, description: "Tanya Plibersek - Environment minister"},
         {phoneNo: `+02 9349 6007`, description: "Matt Thistlethwaite - the MP directly responsible for DHA"},
-        // `+61421137168`,
-        // `+61421137169`,
-        // `+61421137170`,
-        // `+61421137171`,
     ]
     const characters = getRandomCharacters(phoneNumbers.length).map(
         (c) => `${c.name} - ${c.occupation}`,
@@ -149,7 +145,7 @@ function generatePhoneList(): void {
         const phoneNumberElem = document.createElement('div')
         const a = document.createElement('a')
         a.href = `tel:+${contact.phoneNo}` // Replace with actual phone numbers
-        a.textContent = `${contact.phoneNo}` // Replace with actual phone numbers
+        a.textContent = `${contact.phoneNo} - ${contact.description}` // Replace with actual phone numbers
 
 
         const infoAndContact = document.createElement('ul')
@@ -158,10 +154,7 @@ function generatePhoneList(): void {
         characterElem.textContent = characters[index]
         characterElem.textContent = characters[index]
 
-        const infoElem = document.createElement('li')
-        infoElem.textContent = contact.description
 
-        infoAndContact.append(infoElem)
         infoAndContact.append(characterElem)
 
         phoneNumberElem.appendChild(a)

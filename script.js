@@ -126,26 +126,21 @@ function generatePhoneList() {
     }
     phoneList.innerHTML = '';
     var phoneNumbers = [
-        { phoneNo: "+139 342", description: "For defence members, spouses, existing contractors and service providers" },
-        { phoneNo: "+133 342", description: "Invest with us" },
-        // `+61421137168`,
-        // `+61421137169`,
-        // `+61421137170`,
-        // `+61421137171`,
+        { phoneNo: "+139 342", description: "Main DHA contact" },
+        { phoneNo: "+133 342", description: "Leasing experts" },
+        { phoneNo: "+02 6277 7920", description: "Tanya Plibersek - Environment minister" },
+        { phoneNo: "+02 9349 6007", description: "Matt Thistlethwaite - the MP directly responsible for DHA" },
     ];
     var characters = getRandomCharacters(phoneNumbers.length).map(function (c) { return "".concat(c.name, " - ").concat(c.occupation); });
     function formatPhoneNumber(contact, index) {
         var phoneNumberElem = document.createElement('div');
         var a = document.createElement('a');
         a.href = "tel:+".concat(contact.phoneNo); // Replace with actual phone numbers
-        a.textContent = "".concat(contact.phoneNo); // Replace with actual phone numbers
+        a.textContent = "".concat(contact.phoneNo, " - ").concat(contact.description); // Replace with actual phone numbers
         var infoAndContact = document.createElement('ul');
         var characterElem = document.createElement('li');
         characterElem.textContent = characters[index];
         characterElem.textContent = characters[index];
-        var infoElem = document.createElement('li');
-        infoElem.textContent = contact.description;
-        infoAndContact.append(infoElem);
         infoAndContact.append(characterElem);
         phoneNumberElem.appendChild(a);
         phoneNumberElem.appendChild(infoAndContact);
